@@ -1,0 +1,124 @@
+    /* Elimina márgenes y rellenos por defecto y ajusta el modelo de caja */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos generales del cuerpo de la página */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+      height: 100vh; /* Altura completa de la ventana */
+      background: url('img/background.png') 
+        no-repeat center center fixed; /* Imagen de fondo centrada y fija */
+      background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+      position: relative; /* Necesario para colocar la capa transparente encima */
+    }
+
+    /* Capa oscura semitransparente sobre el fondo */
+    body::before {
+      content: ""; /* Obligatorio para pseudoelemento */
+      position: absolute; /* Cubre toda la pantalla */
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Negro con opacidad del 50% */
+      z-index: 0; /* Detrás del contenido principal */
+    }
+
+    /* Caja del formulario de login */
+    .login-box {
+      position: relative; /* Para situarse por encima de la capa oscura */
+      z-index: 1; /* Encima de la capa transparente */
+      background-color: rgba(0, 0, 0, 0.9); /* Blanco con opacidad (transparente) */
+      padding: 40px; /* Espacio interior */
+      border-radius: 15px; /* Bordes redondeados */
+      box-shadow: 0 10px 25px #990000; /* Sombra para efecto flotante */
+      width: 100%;
+      max-width: 350px; /* Ancho máximo */
+      margin: auto; /* Centrado horizontal */
+      top: 50%;
+      transform: translateY(-50%); /* Centrado vertical */
+    }
+
+    /* Título del formulario */
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #990000; /* Azul moderno */
+    }
+
+    /* Etiquetas de los campos */
+    .login-box label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    /* Campos de texto */
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s ease; /* Suaviza efectos al enfocar */
+    }
+    .login-box input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+    /* Efecto al enfocar los campos */
+    .login-box input[type="text"]:focus,
+    .login-box input[type="password"]:focus {
+      border-color: #990000; /* Borde azul al enfocar */
+      box-shadow: 0 0 5px #ffcc00(0, 114, 255, 0.3);
+    }
+    .login-box input[type="email"]:focus {
+  border-color: #990000;
+  box-shadow: 0 0 5px #ffcc00;
+}
+
+    /* Botón de enviar */
+    .login-box input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #990000; /* Azul moderno */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Efecto al pasar el mouse sobre el botón */
+    .login-box input[type="submit"]:hover {
+      background-color: #5c0000; /* Azul más oscuro al pasar el cursor */
+    }
+
+    /* Estilos para enlaces adicionales */
+    .login-box .extra {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login-box .extra a {
+      text-decoration: none;
+      color: #ffcc00;
+      font-size: 14px;
+    }
+
+    .login-box .extra a:hover {
+      text-decoration: underline; /* Subrayado al pasar el cursor */
+    }
