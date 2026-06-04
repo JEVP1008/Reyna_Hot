@@ -15,7 +15,7 @@ formulario.addEventListener("submit", function(e) {
     if (cuenta) {
         localStorage.setItem("usuarioActivo", cuenta.usuario);
         alert("¡Bienvenido a Reyna Hot! El fuego está listo, el sabor te espera.");
-        window.location.href = "Index.html";
+        window.location.href = "index.html";
     } else {
         alert("Usuario o contraseña incorrectos.");
     }
